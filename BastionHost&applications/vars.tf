@@ -25,3 +25,10 @@ variable "domain" {
   type    = string
   default = "udaya.us"
 }
+
+variable "dd" {
+  default = <<EOF
+ewogICJBUFBfVVNFUiIgOiAiYWRtaW4iLAogICJBUFBfUEFTUyIgOiAiQDEyM0NoYWl0dSIsCiAg
+IkREX0FQSV9LRVkiIDogIjFmZTA2NTUxZjM1Y2NmN2NmMjI1ZmE5YmZiOTVkNWYxIgp9Cg==
+EOF
+}
