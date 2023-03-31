@@ -43,14 +43,9 @@ resource "aws_route_table" "public_route_table" {
     cidr_block = "0.0.0.0/0" # Traffic from Public Subnet reaches Internet via Internet Gateway
     gateway_id = aws_internet_gateway.IGW.id
   }
-  route {
-    cidr_block         = "10.0.0.0/16"
-    transit_gateway_id = aws_ec2_transit_gateway.tgw.id
-  }
   tags = merge(tomap({
     "Name" = "${local.tags.Service}-${local.Environment}-ec2-spot-public-route-table"
-  }), local.tags)
-  depends_on = [aws_ec2_transit_gateway_vpc_attachment.tgw_attachment_one]
+  }), local.tags
 }
 
 # Route table Association with Public Subnet one
