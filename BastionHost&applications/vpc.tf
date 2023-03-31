@@ -45,7 +45,7 @@ resource "aws_route_table" "public_route_table" {
   }
   tags = merge(tomap({
     "Name" = "${local.tags.Service}-${local.Environment}-ec2-spot-public-route-table"
-  }), local.tags
+  }), local.tags)
 }
 
 # Route table Association with Public Subnet one
