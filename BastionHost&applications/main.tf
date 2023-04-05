@@ -78,4 +78,5 @@ resource "aws_spot_instance_request" "vm" {
   tags = merge(tomap({
     "Name" = "${local.tags.Service}-${local.Environment}-${local.instance_types[count.index]}"
   }), local.tags)
+  depends_on = [aws_secretsmanager_secret_version.secretvalue]
 }
